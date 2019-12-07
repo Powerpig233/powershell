@@ -1,0 +1,38 @@
+$sum=0
+foreach ($elem in $args)
+{
+    if($elem -eq 0){
+        $elem++
+    }
+    $sum+=$elem
+}
+echo $sum
+
+
+
+param($fname)
+if(Test-Path $fname)
+{
+    $content=get-content $fname
+    echo $content.Length
+    $sum=0
+    for($i=0;$i -lt $content.Length;$i++){
+        $sum+=$content[$i]
+    }
+    echo $sum
+}
+else
+{
+    echo "Error"
+}
+
+
+
+$a="kiks snks snkhd"
+$a[1]   #i
+$a      #kiks snks snkhd
+$a.split()    #kiks
+              #snks
+              #snkhd
+$a.indexOf("i")
+$a.Substring(1,4)
