@@ -60,7 +60,7 @@ contains : containing (-notcontains)
 -le, -ge Smaller equal, greater equal 
 -join, -split, -csplit (case split, small-capital letter) 
 
-$aarray=@{?key”=?value”; …}
+$aarray=@{"key"="value";}
 $at=@{a=4;b=5} # Among the elements ; !!!!!!
 Reaching elements: ($at[a])(not good) or $at.a
 Element assignment: ($at[a]=10)(not good) $at.a=10
