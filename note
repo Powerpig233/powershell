@@ -1,0 +1,32 @@
+'get-childItem' or 'ls' // same as 'ls -l' in Unix
+'Get-Alias' // all command name and equal to Unix
+'echo' // same as Unix
+'>>' // input to a file
+'cat' // same as Unix
+copy-Item file copyfile // same as 'copy' in Unix
+        Copy-Item -Destination copyfile file
+Remove-Item _.txt -WhatIf //
+        Remove-Item _.txt -Confirm // remove all (.txt) file
+create a new file and derictory
+  mkdir new
+  New-Item -ItemType Directory new1
+  New-Item -ItemType File newf
+'Write-Host content'
+  'Write-Output'
+'Sort'
+        'Get-ChildItem | Sort-Object -Property Mode,lasttimeWrite'
+        'Get-ChildItem | Sort-Object'
+
+  
+        'Get-ChildItem | Get-Member'
+        'Get-ChildItem | Measure-Object' //count of the file
+        'Get-ChildItem | Measure-Object -Property Length -Sum'
+        '1+(Get-ChildItem | Measure-Object -Property Length -Sum -Maximum -Average).Maximum'
+        'Get-ChildItem | Where-Object {$_.Extension -eq ".txt"}'
+        'Get-ChildItem | Select-Object -First 5'
+        'Get-ChildItem | Select-Object -Property Name,Length'
+        
+        
+        cat .\fruit.txt | Select-String "l" // which includes 'l'
+        cat .\fruit.txt | Select-String "^a" // start with 'a'
+        cat .\fruit.txt | Select-String "m$" // end is 'm'
