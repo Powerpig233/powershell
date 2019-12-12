@@ -5,7 +5,7 @@ if ($args.Length -ne 3)
     Write-Output "You need 3 parameters: "
     $a= @(0..2)
     for($i=0; $i -lt 3; $i++){
-        $a[$i]=Read-Host
+        $a[$i]=Read-Host // 从控制台读取一行输入
     }
 
     $longest=$a[0]
