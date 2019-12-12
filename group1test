@@ -1,0 +1,49 @@
+First: Create a powershell script which gets 3 integer numbers as parameters (in the case of
+missing parameters, read the numbers from the keyboard) and gives back the sum of the
+first two and subtract the third!
+
+if($args.Length -ne 3){
+    $a=@(0..2)
+    Write-Output "need parameters"
+    for($i=0;$i -lt 3; $i++){
+       $a[$i]=Read-Host
+    }
+    $result = [Int]$a[0] + [Int]$a[1] - [Int]$a[2]
+    Write-Host $result
+}
+else{
+    $result=$args[0]+$args[1]-$args[2]
+    Write-Host $result
+}
+
+2nd: Create a powershell script which gets a lot of numbers as parameters and writes them out
+in reverse order! (Previously, we do not know how many parameters we shall have.)
+.\second.ps1 1 2 3 4 5 =&gt; 5 4 3 2 1
+
+$tmp=Read-Host
+$num=@()
+$cnt=0
+foreach($i in $tmp.Split(" "))
+{
+   $num = $num + $i
+   $cnt++
+    
+}
+
+for ($j=$cnt;$j -ge 0 ;$j--)
+{
+
+     echo $num[$j]
+
+
+}
+
+3rd : Create a powershell script which gets a filename as a parameter. In the file there are
+sentences in each line. Give back the shortest line!
+
+
+
+4th: Create a Powershell script, which gets a file name and a number (N) as an argument and
+writes out the first and last N lines of the file! Check the existence of the file!
+
+
