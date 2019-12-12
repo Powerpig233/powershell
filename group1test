@@ -75,9 +75,9 @@ if($args.Count -eq 2){
         for($i=0;$i -lt $num;$i++){
             echo $f[$i]
         }
-        $cnt=0
+        $cnt=1
         echo "last $num line"
-        for($j=$f.Length;$j -gt 0;$j--){
+        for($j=$f.Length-1;$j -gt 0;$j--){
             if($cnt -le $num){
                 echo $f[$j]
             }
