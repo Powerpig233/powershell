@@ -41,9 +41,49 @@ for ($j=$cnt;$j -ge 0 ;$j--)
 3rd : Create a powershell script which gets a filename as a parameter. In the file there are
 sentences in each line. Give back the shortest line!
 
+if($args.Count -ne 0){
+    if(!(Test-Path $args[0])){
+        echo "not exist"
+    }else{
+        $f=Get-Content $args[0]
+        $sen=$f[1]
+        $i=0
+        while($i -lt $f.Length){
+            if($f[$i].Length -lt $sen.Length){
+            
+            
+            }
+            $i++
+        }
+        echo "shortest line $sen"
 
+    }
+}else{
+    echo "give a name"
+}
 
 4th: Create a Powershell script, which gets a file name and a number (N) as an argument and
 writes out the first and last N lines of the file! Check the existence of the file!
 
-
+if($args.Count -eq 2){
+    if(!(Test-Path $args[0])){
+        echo "not exist"
+    }else{
+        $f=Get-Content $args[0]
+        $num=$args[1]
+        echo "first $num line"
+        for($i=0;$i -lt $num;$i++){
+            echo $f[$i]
+        }
+        $cnt=0
+        echo "last $num line"
+        for($j=$f.Length;$j -gt 0;$j--){
+            if($cnt -le $num){
+                echo $f[$j]
+            }
+            $cnt++
+        }
+    }
+}else{
+    echo "give two parameters"
+}
