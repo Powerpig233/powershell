@@ -12,7 +12,7 @@ if($args.Length -ne 3){
     Write-Host $result
 }
 else{
-    $result=$args[0]+$args[1]-$args[2]
+    $result=[Int]$args[0]+[Int]$args[1]-[Int]$args[2]
     Write-Host $result
 }
 
